@@ -1,47 +1,68 @@
+import { IoLocationOutline } from "react-icons/io5";
+import { FiPhoneCall } from "react-icons/fi";
+import { FiInstagram } from "react-icons/fi";
+import { FiMail } from "react-icons/fi";
+import contactImage from "../assets/contact.png";
+
 const ContactUs = () => {
   return (
-    <section className="bg-gray-100 py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Contact Us</h2>
-        <form className="mt-4 space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Name
-            </label>
-            <input
-              type="text"
-              className="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-            />
+    <div className="bg-skyBlue h-[100vh] w-[100%] flex items-center justify-center">
+      <div className="w-[80%] flex items-center justify-center gap-16">
+        <div className="w-[30%]">
+          <h2 className="text-5xl font-medium">Reach Out to Us</h2>
+          <div className=" flex flex-col gap-4">
+            <div className="flex items-start gap-4">
+              <div className="text-2xl">
+                <IoLocationOutline />
+              </div>
+
+              <div>
+                <p className="text-base font-light">
+                  <span className="block font-medium ">
+                    Corporate headquarters:
+                  </span>
+                  3rd floor, 39 Adeola Odeku Street, Victoria island  Lagos
+                  Nigeria
+                </p>
+                <p className="text-base font-light">
+                  <span className="block font-medium">
+                    Branch office/ Operational yard:
+                  </span>
+                  Plot 28 High street off ordinance road  Trans-Amadi Industrial
+                  layout , Port harcourt  Rivers state Nigeria.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="text-2xl">
+                <FiPhoneCall />
+              </div>
+
+              <div className="text-base">
+                <span className="block font-medium ">+234 8023535353</span>
+
+                <span className="block font-medium">+234 8136611200</span>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="text-2xl">
+                <FiInstagram />
+              </div>
+              <span className="text-base font-light">sesl_ng</span>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="text-2xl">
+                <FiMail />
+              </div>
+              <span className="text-base font-light">info@sesl-ng.com</span>
+            </div>
           </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Email
-            </label>
-            <input
-              type="email"
-              className="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Message
-            </label>
-            <textarea
-              className="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-              rows="4"
-            ></textarea>
-          </div>
-          <div>
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-700"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
+        </div>
+        <div>
+          <img src={contactImage} alt="" />
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
