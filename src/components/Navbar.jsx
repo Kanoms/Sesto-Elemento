@@ -9,6 +9,10 @@ const Navbar = () => {
     navigate(`/services#${service}`);
   };
 
+  const handleSectorNav = (sector) => {
+    navigate(`/sector/${sector}`);
+  };
+
   return (
     <nav className="fixed top-0 w-full bg-white shadow-md z-50">
       <div className="px-4 sm:px-6 lg:px-8 py-4">
@@ -54,10 +58,13 @@ const Navbar = () => {
 
               {/* Services Dropdown */}
               <div className="relative group">
-                <div className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer">
+                <Link
+                  to="/services"
+                  className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer"
+                >
                   Services
                   <IoIosArrowDown />
-                </div>
+                </Link>
                 <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md">
                   <div
                     onClick={() => handleServiceNav("procurement")}
@@ -102,42 +109,42 @@ const Navbar = () => {
               <div className="relative group">
                 <Link
                   to="/sectors"
-                  className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center"
+                  className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer"
                 >
                   Sectors
                   <IoIosArrowDown />
                 </Link>
                 <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md">
-                  <Link
-                    to="/sectors/oil-and-gas"
-                    className="block px-4 py-2 text-navGray"
+                  <div
+                    onClick={() => handleSectorNav("oilngas")}
+                    className="block px-4 py-2 text-navGray cursor-pointer"
                   >
                     Oil and Gas
-                  </Link>
-                  <Link
-                    to="/sectors/defence"
-                    className="block px-4 py-2 text-navGray"
+                  </div>
+                  <div
+                    onClick={() => handleSectorNav("constructionnengineering")}
+                    className="block px-4 py-2 text-navGray cursor-pointer"
+                  >
+                    Construction and Engineering
+                  </div>
+                  <div
+                    onClick={() => handleSectorNav("defence")}
+                    className="block px-4 py-2 text-navGray cursor-pointer"
                   >
                     Defence
-                  </Link>
-                  <Link
-                    to="/sectors/power-generation"
-                    className="block px-4 py-2 text-navGray"
-                  >
-                    Power Generation
-                  </Link>
-                  <Link
-                    to="/sectors/infrastructure"
-                    className="block px-4 py-2 text-navGray"
+                  </div>
+                  <div
+                    onClick={() => handleSectorNav("infrastructure")}
+                    className="block px-4 py-2 text-navGray cursor-pointer"
                   >
                     Infrastructure
-                  </Link>
-                  <Link
-                    to="/sectors/renewable"
-                    className="block px-4 py-2 text-navGray"
+                  </div>
+                  <div
+                    onClick={() => handleSectorNav("renewable")}
+                    className="block px-4 py-2 text-navGray cursor-pointer"
                   >
                     Renewable
-                  </Link>
+                  </div>
                 </div>
               </div>
 

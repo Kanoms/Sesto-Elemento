@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const ServicesSections = ({ ssImage, ssHeader, ssParagraph }) => {
   const navigate = useNavigate();
-  const [selectedService, setSelectedService] = useState("");
+  const [selectedService, setSelectedService] = useState("procurement");
 
   const handleServiceNav = (service) => {
     setSelectedService(service);
