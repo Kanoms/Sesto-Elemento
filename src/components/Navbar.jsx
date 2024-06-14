@@ -69,12 +69,23 @@ const Navbar = () => {
                     Contracting
                   </Link>
                   <Link
+                    to="/services/marine"
+                    className="block px-4 py-2 text-navGray list-disc"
+                  >
+                    Marine
+                  </Link>
+                  <Link
                     to="/services/man-power-supply"
                     className="block px-4 py-2 text-navGray list-disc"
                   >
                     Man Power Supply
                   </Link>
-
+                  <Link
+                    to="/services/technical-site-asst"
+                    className="block px-4 py-2 text-navGray list-disc"
+                  >
+                    Technical Site Asst
+                  </Link>
                   <Link
                     to="/services/equipment-lease"
                     className="block px-4 py-2 text-navGray"
@@ -155,7 +166,7 @@ const Navbar = () => {
           <div>
             <Link
               to="/contact-us"
-              className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+              className="text-navGray hover:text-dkBlue px-3 py-2 rounded-md text-sm font-semibold"
             >
               Contact Us
             </Link>
