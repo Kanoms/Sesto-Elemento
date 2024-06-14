@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import HomeSection from "../components/HomeSection";
 import industryImage from "../assets/industry.png";
 import workerImage from "../assets/worker.png";

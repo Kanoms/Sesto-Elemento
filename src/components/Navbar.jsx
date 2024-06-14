@@ -1,11 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logoImage from "../assets/logo.png";
 import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleServiceNav = (service) => {
+    navigate(`/services#${service}`);
+  };
+
   return (
     <nav className="fixed top-0 w-full bg-white shadow-md z-50">
-      <div className=" px-4 sm:px-6 lg:px-8 py-4">
+      <div className="px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
             <Link to="/">
@@ -48,50 +54,47 @@ const Navbar = () => {
 
               {/* Services Dropdown */}
               <div className="relative group">
-                <Link
-                  to="/services"
-                  className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center"
-                >
+                <div className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer">
                   Services
                   <IoIosArrowDown />
-                </Link>
+                </div>
                 <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md">
-                  <Link
-                    to="/services/procurement"
-                    className="block px-4 py-2 text-navGray list-disc"
+                  <div
+                    onClick={() => handleServiceNav("procurement")}
+                    className="block px-4 py-2 text-navGray cursor-pointer"
                   >
                     Procurement
-                  </Link>
-                  <Link
-                    to="/services/contracting"
-                    className="block px-4 py-2 text-navGray list-disc"
+                  </div>
+                  <div
+                    onClick={() => handleServiceNav("contracting")}
+                    className="block px-4 py-2 text-navGray cursor-pointer"
                   >
                     Contracting
-                  </Link>
-                  <Link
-                    to="/services/marine"
-                    className="block px-4 py-2 text-navGray list-disc"
+                  </div>
+                  <div
+                    onClick={() => handleServiceNav("marine")}
+                    className="block px-4 py-2 text-navGray cursor-pointer"
                   >
                     Marine
-                  </Link>
-                  <Link
-                    to="/services/man-power-supply"
-                    className="block px-4 py-2 text-navGray list-disc"
+                  </div>
+                  <div
+                    onClick={() => handleServiceNav("manPowerSupply")}
+                    className="block px-4 py-2 text-navGray cursor-pointer"
                   >
                     Man Power Supply
-                  </Link>
-                  <Link
-                    to="/services/technical-site-asst"
-                    className="block px-4 py-2 text-navGray list-disc"
+                  </div>
+                  <div
+                    onClick={() => handleServiceNav("technicalSiteAsst")}
+                    className="block px-4 py-2 text-navGray cursor-pointer"
                   >
                     Technical Site Asst
-                  </Link>
-                  <Link
-                    to="/services/equipment-lease"
-                    className="block px-4 py-2 text-navGray"
+                  </div>
+                  <div
+                    onClick={() => handleServiceNav("equipmentLease")}
+                    className="block px-4 py-2 text-navGray cursor-pointer"
                   >
                     Equipment Lease
-                  </Link>
+                  </div>
                 </div>
               </div>
 
