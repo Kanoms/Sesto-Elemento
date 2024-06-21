@@ -6,9 +6,9 @@ import footerlogoImage from "../assets/footerlogo.png";
 
 const Footer = () => {
   return (
-    <section className="flex flex-col px-16 py-20 bg-skyBlue gap-20">
-      <div className="flex justify-between items-center">
-        <div className="w-[50%]">
+    <section className="flex flex-col px-4 md:px-8 lg:px-16 py-20 bg-skyBlue gap-20">
+      <div className="flex flex-col gap-4 lg:flex-row justify-between lg:items-center">
+        <div className="lg:w-[50%]">
           <div className="mb-4">
             <img src={footerlogoImage} alt="footer logo" />
           </div>
@@ -19,7 +19,7 @@ const Footer = () => {
           </span>
         </div>
 
-        <div className="flex justify-between gap-16">
+        <div className="hidden md:flex justify-between gap-8 lg:gap-16">
           <ul>
             <li className="font-semibold">Lorem Ipsum</li>
             <li>Lorem Ipsum</li>
@@ -52,7 +52,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="flex justify-between">
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-4 justify-between">
         <span>Follow us on all social media platforms</span>
         <div className="flex items-center gap-5 text-xl">
           <FiInstagram />

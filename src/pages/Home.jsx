@@ -43,7 +43,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="font-lexend">
+    <div className="font-lexend pt-6 xl:pt-0">
       <HomeSection {...sections[currentSection]} />
       <CoreValues bgColor="bg-offWhite" />
       <WhyusSection />

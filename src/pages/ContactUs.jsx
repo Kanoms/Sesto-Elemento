@@ -7,8 +7,8 @@ import contactImage from "../assets/contact.png";
 const ContactUs = () => {
   return (
     <div className="bg-skyBlue h-[100vh] w-[100%] flex items-center justify-center">
-      <div className="w-[80%] flex items-center justify-center gap-16">
-        <div className="w-[30%]">
+      <div className="w-[80%] flex flex-col-reverse lg:flex-row items-center justify-center gap-16">
+        <div className="lg:w-[30%]">
           <h2 className="text-5xl font-medium mb-6">Reach Out to Us</h2>
           <div className=" flex flex-col gap-4">
             <div className="flex items-start gap-4">
