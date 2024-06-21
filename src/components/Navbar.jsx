@@ -1,16 +1,32 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import logoImage from "../assets/logo.png";
 import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const [selectedService, setSelectedService] = useState("");
+  const [selectedSector, setSelectedSector] = useState("");
+
+  useEffect(() => {
+    if (location.pathname.startsWith("/services")) {
+      setSelectedService(location.hash.substring(1));
+    }
+    if (location.pathname.startsWith("/sectors")) {
+      setSelectedSector(location.hash.substring(1));
+    }
+  }, [location]);
 
   const handleServiceNav = (service) => {
+    setSelectedService(service);
     navigate(`/services#${service}`);
   };
 
   const handleSectorNav = (sector) => {
-    navigate(`/sector/${sector}`);
+    setSelectedSector(sector);
+    navigate(`/sectors#${sector}`);
   };
 
   return (
@@ -60,48 +76,37 @@ const Navbar = () => {
               <div className="relative group">
                 <Link
                   to="/services"
-                  className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer"
+                  className={`text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer ${
+                    location.pathname.startsWith("/services") &&
+                    selectedService === ""
+                      ? "text-blue-500 border-b-2 border-blue-500"
+                      : ""
+                  }`}
                 >
                   Services
                   <IoIosArrowDown />
                 </Link>
                 <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md">
-                  <div
-                    onClick={() => handleServiceNav("procurement")}
-                    className="block px-4 py-2 text-navGray cursor-pointer"
-                  >
-                    Procurement
-                  </div>
-                  <div
-                    onClick={() => handleServiceNav("contracting")}
-                    className="block px-4 py-2 text-navGray cursor-pointer"
-                  >
-                    Contracting
-                  </div>
-                  <div
-                    onClick={() => handleServiceNav("marine")}
-                    className="block px-4 py-2 text-navGray cursor-pointer"
-                  >
-                    Marine
-                  </div>
-                  <div
-                    onClick={() => handleServiceNav("manPowerSupply")}
-                    className="block px-4 py-2 text-navGray cursor-pointer"
-                  >
-                    Man Power Supply
-                  </div>
-                  <div
-                    onClick={() => handleServiceNav("technicalSiteAsst")}
-                    className="block px-4 py-2 text-navGray cursor-pointer"
-                  >
-                    Technical Site Asst
-                  </div>
-                  <div
-                    onClick={() => handleServiceNav("equipmentLease")}
-                    className="block px-4 py-2 text-navGray cursor-pointer"
-                  >
-                    Equipment Lease
-                  </div>
+                  {[
+                    { label: "Procurement", key: "procurement" },
+                    { label: "Contracting", key: "contracting" },
+                    { label: "Marine", key: "marine" },
+                    { label: "Man Power Supply", key: "manPowerSupply" },
+                    { label: "Technical Site Asst", key: "technicalSiteAsst" },
+                    { label: "Equipment Lease", key: "equipmentLease" },
+                  ].map((service) => (
+                    <div
+                      key={service.key}
+                      onClick={() => handleServiceNav(service.key)}
+                      className={`block px-4 py-2 text-navGray cursor-pointer ${
+                        selectedService === service.key
+                          ? "text-blue-500 border-b-2 border-blue-500"
+                          : ""
+                      }`}
+                    >
+                      {service.label}
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -109,42 +114,39 @@ const Navbar = () => {
               <div className="relative group">
                 <Link
                   to="/sectors"
-                  className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer"
+                  className={`text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer ${
+                    location.pathname.startsWith("/sectors") &&
+                    selectedSector === ""
+                      ? "text-blue-500 border-b-2 border-blue-500"
+                      : ""
+                  }`}
                 >
                   Sectors
                   <IoIosArrowDown />
                 </Link>
                 <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md">
-                  <div
-                    onClick={() => handleSectorNav("oilngas")}
-                    className="block px-4 py-2 text-navGray cursor-pointer"
-                  >
-                    Oil and Gas
-                  </div>
-                  <div
-                    onClick={() => handleSectorNav("constructionnengineering")}
-                    className="block px-4 py-2 text-navGray cursor-pointer"
-                  >
-                    Construction and Engineering
-                  </div>
-                  <div
-                    onClick={() => handleSectorNav("defence")}
-                    className="block px-4 py-2 text-navGray cursor-pointer"
-                  >
-                    Defence
-                  </div>
-                  <div
-                    onClick={() => handleSectorNav("infrastructure")}
-                    className="block px-4 py-2 text-navGray cursor-pointer"
-                  >
-                    Infrastructure
-                  </div>
-                  <div
-                    onClick={() => handleSectorNav("renewable")}
-                    className="block px-4 py-2 text-navGray cursor-pointer"
-                  >
-                    Renewable
-                  </div>
+                  {[
+                    { label: "Oil and Gas", key: "oilngas" },
+                    {
+                      label: "Construction and Engineering",
+                      key: "constructionnengineering",
+                    },
+                    { label: "Defence", key: "defence" },
+                    { label: "Infrastructure", key: "infrastructure" },
+                    { label: "Renewable", key: "renewable" },
+                  ].map((sector) => (
+                    <div
+                      key={sector.key}
+                      onClick={() => handleSectorNav(sector.key)}
+                      className={`block px-4 py-2 text-navGray cursor-pointer ${
+                        selectedSector === sector.key
+                          ? "text-blue-500 border-b-2 border-blue-500"
+                          : ""
+                      }`}
+                    >
+                      {sector.label}
+                    </div>
+                  ))}
                 </div>
               </div>
 
