@@ -1,5 +1,6 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useContext, useRef } from "react";
 import { useLocation } from "react-router-dom";
+import { NavigationContext } from "../context/NavigationContext";
 import SectorHomePage from "../components/SectorHomePage";
 import SectorsSections from "../components/SectorsSections";
 import ContactUs from "./ContactUs";
@@ -26,7 +27,9 @@ const sectorsData = {
     image: defenceImage,
     header: "Defence",
     paragraph:
-      "SESTO ELEMENTO SERVICES supply a broad portfolio of airborne, land and naval systems and products for defense, homeland security and commercial applications. Our systems and products are installed on new platforms, and we also perform comprehensive platform modernization programs. In addition, we provide a range of training and support services. Our major activities include: military aircraft and helicopter systems; commercial aviation systems and aerostructures; unmanned aircraft systems (UAS); electro-optic, night vision and countermeasures systems; naval systems; land vehicle systems; munitions; command, control, communications, computer, intelligence, surveillance and reconnaissance (C4ISR) and cyber systems; electronic warfare and signal intelligence systems; and other commercial activities. Many of these major activities have a number of common and related elements, including common technologies and products, types of programs and customer interface. Therefore, certain of our subsidiaries, divisions or other operating units often jointly conduct marketing, research and development, manufacturing, performance of programs, sales and after sales support among these major activities.",
+      "SESTO ELEMENTO SERVICES supply a broad portfolio of airborne, land and naval systems and products for defense, homeland security and commercial applications. Our systems and products are installed on new platforms, and we also perform comprehensive platform modernization programs. In addition, we provide a range of training and support services. Our major activities include: military aircraft and helicopter systems; commercial aviation systems and aerostructures; unmanned aircraft systems (UAS); electro-optic, night vision and countermeasures systems; naval systems; land vehicle systems; munitions; command, control, communications, computer, intelligence, surveillance and reconnaissance (C4ISR) and cyber systems; electronic warfare and signal intelligence systems; and other commercial activities. Many of these major activities have a number of common and related elements, including common technologies and products, types of programs and customer interface. ",
+    paragraphTwo:
+      "Therefore, certain of our subsidiaries, divisions or other operating units often jointly conduct marketing, research and development, manufacturing, performance of programs, sales and after sales support among these major activities.",
   },
   infrastructure: {
     image: infrastructureImage,
@@ -38,12 +41,14 @@ const sectorsData = {
     image: renewableImage,
     header: "Renewable",
     paragraph:
-      "From project inception to ongoing operations, we offer tailored solutions to support your renewable energy endeavors. Our services include project planning, feasibility studies, permitting and regulatory compliance, equipment procurement, construction management, and maintenance support. We also have extensive experience in optimizing renewable energy systems, ensuring maximum efficiency and performance. Our team can assist with energy storage solutions, grid integration, monitoring and control systems, and ongoing operations and maintenance.",
+      "From project inception to ongoing operations, we offer tailored solutions to support your renewable energy endeavors. Our services include project planning, feasibility studies, permitting and regulatory compliance, equipment procurement, construction management, and maintenance support.",
+    paragraphTwo:
+      "We also have extensive experience in optimizing renewable energy systems, ensuring maximum efficiency and performance. Our team can assist with energy storage solutions, grid integration, monitoring and control systems, and ongoing operations and maintenance.",
   },
 };
 
 const Sectors = () => {
-  const [selectedSector, setSelectedSector] = useState("oilngas");
+  const { selectedSector, setSelectedSector } = useContext(NavigationContext);
   const location = useLocation();
   const sectionRef = useRef(null);
 
@@ -54,18 +59,30 @@ const Sectors = () => {
       if (sectionRef.current) {
         sectionRef.current.scrollIntoView({ behavior: "smooth" });
       }
+    } else {
+      setSelectedSector("oilngas");
     }
-  }, [location]);
+  }, [location, setSelectedSector]);
+
+  useEffect(() => {
+    console.log("Selected sector: ", selectedSector);
+  }, [selectedSector]);
+
+  // Check if selectedSector is defined and exists in sectorsData
+  const isValidSector = selectedSector && sectorsData[selectedSector];
 
   return (
     <div>
       <SectorHomePage />
       <div ref={sectionRef}>
-        <SectorsSections
-          secImage={sectorsData[selectedSector].image}
-          secHeader={sectorsData[selectedSector].header}
-          secParagraph={sectorsData[selectedSector].paragraph}
-        />
+        {isValidSector && (
+          <SectorsSections
+            secImage={sectorsData[selectedSector].image}
+            secHeader={sectorsData[selectedSector].header}
+            secParagraph={sectorsData[selectedSector].paragraph}
+            secParagraphTwo={sectorsData[selectedSector].paragraphTwo}
+          />
+        )}
       </div>
       <ContactUs />
     </div>

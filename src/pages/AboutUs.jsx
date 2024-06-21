@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import ClientsSection from "../components/ClientsSection";
 import WhyusSection from "../components/WhyusSection";
 import ContactUs from "./ContactUs";
@@ -8,6 +9,16 @@ import aboutusBgImage from "../assets/aboutusbg.png";
 import researchersImage from "../assets/researchers.png";
 
 const AboutUs = () => {
+  const sectionRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash.replace("#", "");
+    if (hash === "whoweare" && sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
+
   return (
     <div>
       <section className="bg-skyBlue w-full h-screen py-44 px-[100px] relative flex items-center font-lexend">
@@ -24,20 +35,23 @@ const AboutUs = () => {
             Procurement, Integration, Installation and Maintenance provider.
           </span>
           <span className="text-center text-navGray">
-            Sesto elemento is  headquartered in Lagos Nigeria and has a
-            satellite office in Port Harcourt and Abuja. Our primary focus is on
-            Project Procurement services, Technical site assistance services
-            innovative solutions enhancing Production (Oil, Gas, Minerals),
-            Mining, Pipeline Infrastructure, while its scope extends to various
+            Sesto elemento is headquartered in Lagos Nigeria and has a satellite
+            office in Port Harcourt and Abuja. Our primary focus is on Project
+            Procurement services, Technical site assistance services innovative
+            solutions enhancing Production (Oil, Gas, Minerals), Mining,
+            Pipeline Infrastructure, while its scope extends to various
             environmentally responsible technologies enhance clean and renewable
             energy.
           </span>
         </div>
       </section>
-      <section className="bg-offWhite flex flex-col items-center py-[60px]">
+      <section
+        id="whoweare"
+        ref={sectionRef}
+        className="bg-offWhite flex flex-col items-center py-[60px]"
+      >
         <div className="text-center w-[80%] ">
           <h2 className="text-dkBlue text-5xl font-semibold">Who we are</h2>
-
           <p className="text-lg text-center text-navGray">
             We are a projects and operations support services firm poised
             towards the provision of solutions in the Oil, Energy, Marine,
@@ -94,7 +108,6 @@ const AboutUs = () => {
             </button>
           </Link>
         </div>
-
         <div className="">
           <img src={workingOnSiteImage} alt="two workers" />
         </div>
