@@ -15,9 +15,11 @@ const OurPartners = () => {
   return (
     <div className="font-lexend">
       <section className="h-screen flex flex-col gap-[30px] items-center justify-center">
-        <div className="flex flex-col items-center">
-          <h2 className="text-5xl font-semibold text-dkBlue">Our Partners</h2>
-          <span className="text-lg text-navGray">
+        <div className="flex flex-col items-center text-center">
+          <h2 className="text-4xl sm:text-5xl font-semibold text-dkBlue">
+            Our Partners
+          </h2>
+          <span className="text-base sm:text-lg text-navGray">
             Working together, Ensuring excellence.
           </span>
         </div>

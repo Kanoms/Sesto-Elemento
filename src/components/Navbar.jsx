@@ -31,20 +31,24 @@ const Navbar = () => {
   const handleServiceNav = (service) => {
     setSelectedService(service);
     navigate(`/services#${service}`);
+    setIsMobileMenuOpen(false); // Close the mobile menu
   };
 
   const handleSectorNav = (sector) => {
     setSelectedSector(sector);
     navigate(`/sectors#${sector}`);
+    setIsMobileMenuOpen(false); // Close the mobile menu
   };
 
   const handleAboutusNav = (path) => {
     navigate(path);
+    setIsMobileMenuOpen(false); // Close the mobile menu
   };
 
   const handleLinkClick = (path) => {
     navigate(path);
     window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsMobileMenuOpen(false); // Close the mobile menu
   };
 
   return (
@@ -209,7 +213,7 @@ const Navbar = () => {
         </div>
       </div>
       {isMobileMenuOpen && (
-        <div className="lg:hidden">
+        <div className="lg:hidden max-h-60 w-[80%] overflow-y-auto">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               to="/"

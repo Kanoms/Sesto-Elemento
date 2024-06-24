@@ -6,25 +6,27 @@ import contactImage from "../assets/contact.png";
 
 const ContactUs = () => {
   return (
-    <div className="bg-skyBlue h-[100vh] w-[100%] flex items-center justify-center">
-      <div className="w-[80%] flex flex-col-reverse lg:flex-row items-center justify-center gap-16">
+    <div className="bg-skyBlue h-full w-[100%] flex items-center justify-center pt-24">
+      <div className="px-4 md:px-8 lg:px-0 lg:w-[80%] flex flex-col-reverse lg:flex-row items-center justify-center lg:gap-16">
         <div className="lg:w-[30%]">
-          <h2 className="text-5xl font-medium mb-6">Reach Out to Us</h2>
-          <div className=" flex flex-col gap-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6">
+            Reach Out to Us
+          </h2>
+          <div className=" flex flex-col gap-2 lg:gap-4">
             <div className="flex items-start gap-4">
-              <div className="text-2xl">
+              <div className="text-base lg:text-2xl">
                 <IoLocationOutline />
               </div>
 
               <div>
-                <p className="text-base font-light">
+                <p className="text-sm lg:text-base font-light">
                   <span className="block font-medium ">
                     Corporate headquarters:
                   </span>
                   3rd floor, 39 Adeola Odeku Street, Victoria island  Lagos
                   Nigeria
                 </p>
-                <p className="text-base font-light">
+                <p className="text-sm lg:text-base font-light">
                   <span className="block font-medium">
                     Branch office/ Operational yard:
                   </span>
@@ -34,27 +36,29 @@ const ContactUs = () => {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <div className="text-2xl">
+              <div className="text-base lg:text-2xl">
                 <FiPhoneCall />
               </div>
 
-              <div className="text-base">
+              <div className="text-sm lg:text-base">
                 <span className="block font-medium ">+234 8023535353</span>
 
                 <span className="block font-medium">+234 8136611200</span>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <div className="text-2xl">
+              <div className="text-base lg:text-2xl">
                 <FiInstagram />
               </div>
-              <span className="text-base font-light">sesl_ng</span>
+              <span className="text-sm lg:text-base font-light">sesl_ng</span>
             </div>
             <div className="flex items-start gap-4">
-              <div className="text-2xl">
+              <div className="text-base lg:text-2xl">
                 <FiMail />
               </div>
-              <span className="text-base font-light">info@sesl-ng.com</span>
+              <span className="text-sm lg:text-base font-light">
+                info@sesl-ng.com
+              </span>
             </div>
           </div>
         </div>

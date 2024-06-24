@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { NavigationContext } from "../context/NavigationContext.jsx";
+import PropTypes from "prop-types";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const ServicesSections = ({
   ssImage,
@@ -12,6 +12,7 @@ const ServicesSections = ({
   ssListItems,
 }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { selectedService, setSelectedService } = useContext(NavigationContext);
 
   useEffect(() => {
@@ -26,13 +27,15 @@ const ServicesSections = ({
   };
 
   return (
-    <section className="font-lexend py-48 flex flex-col items-center gap-20 px-16">
+    <section className="font-lexend py-48 flex flex-col items-center gap-20 px-4 md:px-8 lg:px-16">
       <div>
-        <h2 className="text-5xl font-semibold">Services we offer</h2>
+        <h2 className="text-4xl sm:text-5xl font-semibold">
+          Services we offer
+        </h2>
       </div>
       <div>
-        <div className="border-b border-dkBlue text-navGray">
-          <ul className="flex items-center justify-center gap-10">
+        <div className="md:border-b md:border-dkBlue text-navGray">
+          <ul className="flex flex-col md:flex-row items-center justify-between lg:justify-center gap-2 lg:gap-10 text-sm lg:text-base">
             {[
               { label: "Procurement", key: "procurement" },
               { label: "Contracting", key: "contracting" },
@@ -43,28 +46,65 @@ const ServicesSections = ({
             ].map((service) => (
               <li
                 key={service.key}
-                className={`cursor-pointer ${
+                className={`cursor-pointer text-center pb-2 border-b w-[90vw] md:w-fit ${
                   selectedService === service.key
                     ? "text-dkBlue border-b-2 border-dkBlue font-semibold"
-                    : ""
+                    : "border-navGray md:border-none"
                 }`}
                 onClick={() => handleServiceNav(service.key)}
               >
                 {service.label}
+                {selectedService === service.key && (
+                  <div className="mt-4 md:hidden">
+                    {" "}
+                    {/* Only show on mobile */}
+                    <div className="px-4 md:px-0 text-left flex flex-col justify-center gap-4 items-center border-t-2 pt-3 border-dkBlue">
+                      <div>
+                        <img src={ssImage} alt={ssHeader} />
+                      </div>
+                      <div className="w-full">
+                        <h3 className="text-3xl lg:text-4xl font-semibold text-dkBlue mb-4">
+                          {ssHeader}
+                        </h3>
+                        <p className="text-sm lg:text-base text-navGray mb-4">
+                          {ssParagraph}
+                        </p>
+                        <p
+                          className={`text-sm lg:text-base mb-2 ${ssParagraphTwoColor}`}
+                        >
+                          {ssParagraphTwo}
+                        </p>
+                        {ssListItems && ssListItems.length > 0 && (
+                          <ul className="list-disc pl-5">
+                            {ssListItems.map((item, index) => (
+                              <li key={index} className="text-navGray">
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </li>
             ))}
           </ul>
         </div>
-        <div className="flex justify-center gap-32 items-center mt-16 px-36">
+        <div className="hidden px-4 md:px-0 flex-col md:grid md:grid-cols-2 xl:flex justify-center gap-4 md:gap-8 lg:gap-16 xl:gap-32 items-center mt-16 xl:px-36">
+          {" "}
+          {/* Only show on medium and above */}
           <div>
             <img src={ssImage} alt={ssHeader} />
           </div>
-          <div className="w-[50%]">
-            <h3 className="text-4xl font-semibold text-dkBlue mb-4">
+          <div className="w-full xl:w-[50%]">
+            <h3 className="text-3xl lg:text-4xl font-semibold text-dkBlue mb-4">
               {ssHeader}
             </h3>
-            <p className="text-base text-navGray mb-4">{ssParagraph}</p>
-            <p className={`text-base mb-2 ${ssParagraphTwoColor}`}>
+            <p className="text-sm lg:text-base text-navGray mb-4">
+              {ssParagraph}
+            </p>
+            <p className={`text-sm lg:text-base mb-2 ${ssParagraphTwoColor}`}>
               {ssParagraphTwo}
             </p>
             {ssListItems && ssListItems.length > 0 && (

@@ -21,20 +21,20 @@ const AboutUs = () => {
 
   return (
     <div>
-      <section className="bg-skyBlue w-full h-screen py-44 px-[100px] relative flex items-center font-lexend">
+      <section className="bg-skyBlue w-full h-screen py-44 px-4 md:px-8 lg:px-[100px] relative flex items-center font-lexend">
         <div
-          className="w-full flex flex-col items-center px-16 pt-32 pb-24 bg-contain gap-4 bg-no-repeat"
+          className="w-full flex flex-col items-center lg:px-16 pt-32 pb-24 bg-contain gap-4 bg-no-repeat"
           style={{ backgroundImage: `url(${aboutusBgImage})` }}
         >
-          <h2 className="text-[64px] font-extrabold w-[50%] leading-[60px] text-center text-ltBlue">
+          <h2 className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-extrabold lg:w-[50%] leading-[60px] text-center text-ltBlue">
             <span className="text-dkBlue">SESTO</span> ELEMENTO{" "}
             <span className="text-dkBlue">SERVICES</span> LIMITED
           </h2>
-          <span className="text-navGray">
+          <span className="text-navGray text-center text-lg md:text-xl lg:text-2xl">
             Sesto elemento services Limited was established in 2013, a leading,
             Procurement, Integration, Installation and Maintenance provider.
           </span>
-          <span className="text-center text-navGray">
+          <span className="text-center text-navGray text-lg md:text-xl lg:text-2xl">
             Sesto elemento is headquartered in Lagos Nigeria and has a satellite
             office in Port Harcourt and Abuja. Our primary focus is on Project
             Procurement services, Technical site assistance services innovative
@@ -60,21 +60,22 @@ const AboutUs = () => {
             infrastructures that comply with global best practice.
           </p>
         </div>
-        <div className="grid grid-cols-2 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
           <div>
             <img src={researchersImage} alt="researchers" />
           </div>
-          <div className="pr-16">
+          <div className="lg:pr-16 px-4 md:px-8 md:grid md:grid-cols-2 gap-4 md:justify-between lg:block lg:px-0">
             <div>
               <h3 className="text-dkBlue text-[32px] font-semibold">
                 Our Vision
               </h3>
+
+              <span className="text-lg text-center text-navGray">
+                Our vision is to provide our clients with cost effective value
+                adding solutions to achieve success in projects and operations
+                with high standards and positive economic position.
+              </span>
             </div>
-            <span className="text-lg text-center text-navGray">
-              Our vision is to provide our clients with cost effective value
-              adding solutions to achieve success in projects and operations
-              with high standards and positive economic position.
-            </span>
             <div>
               <h3 className="text-dkBlue text-[32px] font-semibold">
                 Our Mission
@@ -92,18 +93,18 @@ const AboutUs = () => {
         </div>
       </section>
       <CoreValues bgColor="bg-skyBlue" />
-      <section className="flex justify-between items-center py-4 bg-offWhite">
-        <div className="w-[50%] ml-16">
-          <h1 className="text-[48px] font-semibold text-dkBlue capitalize">
+      <section className="flex flex-col-reverse lg:flex-row justify-between items-center py-4 bg-offWhite">
+        <div className="lg:w-[50%] lg:ml-16 px-4 md:px-8 lg:px-0 flex flex-col gap-8 items-center text-center lg:text-left lg:block">
+          <h2 className="text-4xl sm:text-[48px] font-semibold text-dkBlue capitalize">
             Our Motivation
-          </h1>
-          <p className="text-navGray mb-4">
+          </h2>
+          <p className="text-navGray mb-4 text-lg md:text-xl lg:text-2xl">
             We are motivated to achieve the elements needed to provide project
             success and build structures and roadways that will leave a lasting
             impression for our clients, our society and our communities
           </p>
           <Link to="/about-us">
-            <button className="bg-dkBlue text-white px-36 py-4 text-sm rounded-lg">
+            <button className="bg-dkBlue text-white px-10 py-4 lg:px-36 lg:py-4 text-xs lg:text-sm rounded-lg">
               Work with us
             </button>
           </Link>

@@ -5,10 +5,10 @@ const CoreValues = ({ bgColor = "bg-offWhite" }) => {
     <section
       className={`${bgColor} py-36 flex flex-col items-center justify-center gap-36`}
     >
-      <h2 className="text-dkBlue text-[44px] font-semibold capitalize">
+      <h2 className="text-dkBlue text-center text-4xl lg:text-[44px] font-semibold capitalize">
         Our core values
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-6 grid-flow-row lg:flex items-center justify-center gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-6 grid-flow-row xl:flex items-center justify-center gap-6">
         <div className="recsize sm:col-start-1 sm:col-span-2">
           <div className="smrecsize">
             <div className="xsrecsizetop bg-dkBlue"></div>
