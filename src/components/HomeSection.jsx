@@ -14,7 +14,7 @@ const HomeSection = ({ bgImage, header, paragraph }) => {
     >
       <div className="absolute inset-0"></div>
       <div
-        className="relative z-10 flex flex-col items-center lg:items-start justify-center h-full lg:w-[50%] px-16"
+        className="relative z-10 flex flex-col items-center lg:items-start  justify-center h-full lg:w-[50%] px-4 md:px-8 lg:px-16"
         data-aos="fade-right"
       >
         <h1 className="text-4xl sm:text-5xl md:text-6xl text-center lg:text-left font-semibold text-white mb-6 capitalize">
