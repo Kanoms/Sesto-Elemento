@@ -64,11 +64,6 @@ const Sectors = () => {
     }
   }, [location, setSelectedSector]);
 
-  useEffect(() => {
-    console.log("Selected sector: ", selectedSector);
-  }, [selectedSector]);
-
-  // Check if selectedSector is defined and exists in sectorsData
   const isValidSector = selectedSector && sectorsData[selectedSector];
 
   return (
