@@ -91,7 +91,7 @@ const ServicesSections = ({
             ))}
           </ul>
         </div>
-        <div className="hidden px-4 md:px-0 flex-col md:grid md:grid-cols-2 xl:flex justify-center gap-4 md:gap-8 lg:gap-16 xl:gap-32 items-center mt-16 xl:px-36">
+        <div className="hidden px-4 md:px-0 flex-col md:grid md:grid-cols-2 xl:flex xl:flex-row justify-center gap-4 md:gap-8 lg:gap-16 xl:gap-32 items-center mt-16 xl:px-36">
           {" "}
           {/* Only show on medium and above */}
           <div>
