@@ -27,7 +27,10 @@ const ServicesSections = ({
   };
 
   return (
-    <section className="font-lexend py-48 flex flex-col items-center gap-20 px-4 md:px-8 lg:px-16">
+    <section
+      className="font-lexend py-32 flex flex-col items-center gap-20 px-4 md:px-8 lg:px-16"
+      data-aos="fade-up"
+    >
       <div>
         <h2 className="text-4xl sm:text-5xl font-semibold">
           Services we offer

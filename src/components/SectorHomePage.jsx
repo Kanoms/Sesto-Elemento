@@ -3,11 +3,14 @@ import oneworkerImage from "../assets/oneworker.png";
 
 const SectorHomePage = () => {
   return (
-    <section className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center text-center lg:text-left py-8 bg-skyBlue">
-      <div>
+    <section className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center text-center lg:text-left py-32 bg-skyBlue">
+      <div data-aos="fade-right">
         <img src={oneworkerImage} alt="one worker" />
       </div>
-      <div className="p-4 sm:p-8 lg:mr-16 flex flex-col gap-4 lg:block">
+      <div
+        className="p-4 sm:p-8 lg:mr-16 flex flex-col gap-4"
+        data-aos="fade-left"
+      >
         <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-semibold text-dkBlue capitalize">
           <span className="text-ltBlue">Our expertise</span> spans for multiple{" "}
           <span className="text-ltBlue">industries</span>

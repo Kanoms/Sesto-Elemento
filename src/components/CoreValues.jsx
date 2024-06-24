@@ -4,6 +4,7 @@ const CoreValues = ({ bgColor = "bg-offWhite" }) => {
   return (
     <section
       className={`${bgColor} py-36 flex flex-col items-center justify-center gap-36`}
+      data-aos="fade-up"
     >
       <h2 className="text-dkBlue text-center text-4xl lg:text-[44px] font-semibold capitalize">
         Our core values

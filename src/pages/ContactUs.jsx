@@ -6,9 +6,9 @@ import contactImage from "../assets/contact.png";
 
 const ContactUs = () => {
   return (
-    <div className="bg-skyBlue h-full w-[100%] flex items-center justify-center pt-24">
+    <div className="bg-skyBlue h-full w-[100%] flex items-center justify-center py-32 font-lexend">
       <div className="px-4 md:px-8 lg:px-0 lg:w-[80%] flex flex-col-reverse lg:flex-row items-center justify-center lg:gap-16">
-        <div className="lg:w-[30%]">
+        <div className="lg:w-[30%]" data-aos="fade-right">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6">
             Reach Out to Us
           </h2>
@@ -62,7 +62,7 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div data-aos="fade-left">
           <img src={contactImage} alt="" />
         </div>
       </div>

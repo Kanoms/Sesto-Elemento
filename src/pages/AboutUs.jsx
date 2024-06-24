@@ -20,21 +20,30 @@ const AboutUs = () => {
   }, [location]);
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <section className="bg-skyBlue w-full h-screen py-44 px-4 md:px-8 lg:px-[100px] relative flex items-center font-lexend">
         <div
           className="w-full flex flex-col items-center lg:px-16 pt-32 pb-24 bg-contain gap-4 bg-no-repeat"
           style={{ backgroundImage: `url(${aboutusBgImage})` }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-extrabold lg:w-[50%] leading-[60px] text-center text-ltBlue">
+          <h2
+            className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-extrabold lg:w-[50%] leading-[60px] text-center text-ltBlue"
+            data-aos="fade-down"
+          >
             <span className="text-dkBlue">SESTO</span> ELEMENTO{" "}
             <span className="text-dkBlue">SERVICES</span> LIMITED
           </h2>
-          <span className="text-navGray text-center text-lg md:text-xl lg:text-2xl">
+          <span
+            className="text-navGray text-center text-lg md:text-xl lg:text-2xl"
+            data-aos="fade-up"
+          >
             Sesto elemento services Limited was established in 2013, a leading,
             Procurement, Integration, Installation and Maintenance provider.
           </span>
-          <span className="text-center text-navGray text-lg md:text-xl lg:text-2xl">
+          <span
+            className="text-center text-navGray text-lg md:text-xl lg:text-2xl"
+            data-aos="fade-up"
+          >
             Sesto elemento is headquartered in Lagos Nigeria and has a satellite
             office in Port Harcourt and Abuja. Our primary focus is on Project
             Procurement services, Technical site assistance services innovative
@@ -48,10 +57,12 @@ const AboutUs = () => {
       <section
         id="whoweare"
         ref={sectionRef}
-        className="bg-offWhite flex flex-col items-center py-[60px]"
+        className="bg-offWhite flex flex-col items-center py-32"
       >
-        <div className="text-center w-[80%] ">
-          <h2 className="text-dkBlue text-5xl font-semibold">Who we are</h2>
+        <div className="text-center w-[80%]" data-aos="fade-up">
+          <h2 className="text-dkBlue text-5xl font-semibold mb-3">
+            Who we are
+          </h2>
           <p className="text-lg text-center text-navGray">
             We are a projects and operations support services firm poised
             towards the provision of solutions in the Oil, Energy, Marine,
@@ -61,10 +72,13 @@ const AboutUs = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-          <div>
+          <div data-aos="fade-right">
             <img src={researchersImage} alt="researchers" />
           </div>
-          <div className="lg:pr-16 px-4 md:px-8 md:grid md:grid-cols-2 gap-4 md:justify-between lg:block lg:px-0">
+          <div
+            className="lg:pr-16 px-4 md:px-8 md:grid md:grid-cols-2 gap-4 md:justify-between lg:flex lg:flex-col lg:px-0"
+            data-aos="fade-left"
+          >
             <div>
               <h3 className="text-dkBlue text-[32px] font-semibold">
                 Our Vision
@@ -93,8 +107,8 @@ const AboutUs = () => {
         </div>
       </section>
       <CoreValues bgColor="bg-skyBlue" />
-      <section className="flex flex-col-reverse lg:flex-row justify-between items-center py-4 bg-offWhite">
-        <div className="lg:w-[50%] lg:ml-16 px-4 md:px-8 lg:px-0 flex flex-col gap-8 items-center text-center lg:text-left lg:block">
+      <section className="flex flex-col-reverse lg:flex-row justify-between items-center py-32 bg-offWhite">
+        <div className="lg:w-[50%] lg:ml-16 px-4 md:px-8 lg:px-0 flex flex-col gap-8 items-center lg:items-start text-center lg:text-left">
           <h2 className="text-4xl sm:text-[48px] font-semibold text-dkBlue capitalize">
             Our Motivation
           </h2>

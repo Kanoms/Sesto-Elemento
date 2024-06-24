@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
@@ -10,6 +13,12 @@ import ContactUs from "./pages/ContactUs.jsx";
 import { NavigationProvider } from "./context/NavigationContext.jsx";
 
 const App = () => {
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   return (
     <div>
       <Router>

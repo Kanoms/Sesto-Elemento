@@ -96,7 +96,7 @@ const Services = () => {
   const isValidService = selectedService && servicesData[selectedService];
 
   return (
-    <div>
+    <div className="font-lexend overflow-x-hidden">
       <ServicesHomePage />
       <div ref={sectionRef}>
         {isValidService && (

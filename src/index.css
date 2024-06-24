@@ -6,7 +6,7 @@
 
 @layer components {
   .recsize {
-    @apply h-[206px] w-[237px] flex flex-col items-center py-10 gap-4 bg-ltBlue2 rounded-lg;
+    @apply h-[206px] w-[90vw] md:w-[220px] lg:w-[237px] flex flex-col items-center py-10 gap-4 bg-ltBlue2 rounded-lg;
   }
 
   .smrecsize {

@@ -72,7 +72,7 @@ const Sectors = () => {
   const isValidSector = selectedSector && sectorsData[selectedSector];
 
   return (
-    <div>
+    <div className="font-lexend overflow-x-hidden">
       <SectorHomePage />
       <div ref={sectionRef}>
         {isValidSector && (

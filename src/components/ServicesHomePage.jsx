@@ -3,8 +3,11 @@ import twoworkersImage from "../assets/twoworkers.png";
 
 const ServicesHomePage = () => {
   return (
-    <section className="flex flex-col-reverse lg:flex-row justify-between items-end lg:items-center text-center lg:text-left py-8 bg-offWhite">
-      <div className="lg:w-[50%] lg:ml-16 flex flex-col gap-4 lg:block p-4 sm:p-8 ">
+    <section className="flex flex-col-reverse lg:flex-row justify-between items-end lg:items-center text-center lg:text-left py-32 bg-offWhite">
+      <div
+        className="lg:w-[50%] lg:ml-16 flex flex-col gap-4 p-4 sm:p-8"
+        data-aos="fade-right"
+      >
         <h2 className="text-4xl md:text-[48px] font-semibold text-dkBlue capitalize">
           <span className="text-ltBlue">Maximizing</span> operational efficiency
           for <span className="text-ltBlue">sustainable growth</span>{" "}
@@ -20,7 +23,7 @@ const ServicesHomePage = () => {
         </Link>
       </div>
 
-      <div className="">
+      <div className="" data-aos="fade-left">
         <img src={twoworkersImage} alt="two workers" />
       </div>
     </section>
