@@ -19,10 +19,7 @@ const Footer = () => {
           </span>
         </div>
 
-        <div
-          className="hidden md:flex justify-between gap-8 lg:gap-16"
-          data-aos="fade-left"
-        >
+        <div className="hidden md:flex justify-between gap-8 lg:gap-16">
           <ul>
             <li className="font-semibold">Lorem Ipsum</li>
             <li>Lorem Ipsum</li>

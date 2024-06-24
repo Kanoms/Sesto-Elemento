@@ -7,10 +7,7 @@ const SectorHomePage = () => {
       <div data-aos="fade-right">
         <img src={oneworkerImage} alt="one worker" />
       </div>
-      <div
-        className="p-4 sm:p-8 lg:mr-16 flex flex-col gap-4"
-        data-aos="fade-left"
-      >
+      <div className="p-4 sm:p-8 lg:mr-16 flex flex-col gap-4">
         <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-semibold text-dkBlue capitalize">
           <span className="text-ltBlue">Our expertise</span> spans for multiple{" "}
           <span className="text-ltBlue">industries</span>

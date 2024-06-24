@@ -23,7 +23,7 @@ const ServicesHomePage = () => {
         </Link>
       </div>
 
-      <div className="" data-aos="fade-left">
+      <div className="">
         <img src={twoworkersImage} alt="two workers" />
       </div>
     </section>

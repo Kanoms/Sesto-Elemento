@@ -7,10 +7,7 @@ const WhyusSection = () => {
       <div data-aos="fade-right">
         <img src={suitsImage} alt="Suits" />
       </div>
-      <div
-        className="p-4 sm:p-8 lg:mr-16 flex flex-col gap-4"
-        data-aos="fade-left"
-      >
+      <div className="p-4 sm:p-8 lg:mr-16 flex flex-col gap-4">
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] text-center lg:text-left font-semibold text-dkBlue">
           Why us?
         </h2>

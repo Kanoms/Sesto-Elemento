@@ -62,7 +62,7 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-        <div data-aos="fade-left">
+        <div>
           <img src={contactImage} alt="" />
         </div>
       </div>
