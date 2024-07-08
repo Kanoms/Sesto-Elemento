@@ -30,7 +30,7 @@ const OurPartners = () => {
                 <img
                   src={client}
                   alt={`Client ${index + 1}`}
-                  className="h-20 md:h-24 lg:h-32 xl:h-full"
+                  className="logos"
                 />
               </div>
             ))}
@@ -41,7 +41,7 @@ const OurPartners = () => {
                 <img
                   src={client}
                   alt={`Client ${index + 1}`}
-                  className="h-20 md:h-24 lg:h-32 xl:h-full"
+                  className="logos"
                 />
               </div>
             ))}

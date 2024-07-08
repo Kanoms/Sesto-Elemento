@@ -52,7 +52,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white shadow-md z-50">
+    <nav className="fixed top-0 w-full bg-white shadow-md z-50 font-lexend">
       <div className="px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
@@ -69,7 +69,7 @@ const Navbar = () => {
             <div className="ml-10 flex items-baseline space-x-4">
               <Link
                 to="/"
-                className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+                className="text-navGray hover:underline px-3 py-2 rounded-md text-sm font-medium"
                 onClick={() => handleLinkClick("/")}
               >
                 Home
@@ -79,7 +79,7 @@ const Navbar = () => {
               <div className="relative group">
                 <Link
                   to="/about-us"
-                  className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center"
+                  className="text-navGray hover:underline px-3 py-2 rounded-md text-sm font-medium flex items-center"
                   onClick={() => handleLinkClick("/about-us")}
                 >
                   About Us
@@ -109,7 +109,7 @@ const Navbar = () => {
               <div className="relative group">
                 <Link
                   to="/services"
-                  className={`text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer ${
+                  className={`text-navGray hover:underline px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer ${
                     location.pathname.startsWith("/services") &&
                     selectedService === ""
                       ? "text-dkBlue"
@@ -147,7 +147,7 @@ const Navbar = () => {
               <div className="relative group">
                 <Link
                   to="/sectors"
-                  className={`text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer ${
+                  className={`text-navGray hover:underline px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer ${
                     location.pathname.startsWith("/sectors") &&
                     selectedSector === ""
                       ? "text-dkBlue"
@@ -186,7 +186,7 @@ const Navbar = () => {
               {/* Our Partners Link */}
               <Link
                 to="/our-partners"
-                className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+                className="text-navGray hover:underline px-3 py-2 rounded-md text-sm font-medium"
                 onClick={() => handleLinkClick("/our-partners")}
               >
                 Our Partners
@@ -196,12 +196,12 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-navGray hover:text-gray-700 focus:outline-none"
+              className="text-navGray hover:underline focus:outline-none"
             >
               <IoMenu size={24} />
             </button>
           </div>
-          <div>
+          <div className="hidden lg:block">
             <Link
               to="/contact-us"
               className="text-navGray hover:text-dkBlue px-3 py-2 rounded-md text-sm font-semibold"
@@ -217,7 +217,7 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               to="/"
-              className="text-navGray hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+              className="text-navGray hover:underline block px-3 py-2 rounded-md text-base font-medium"
               onClick={() => handleLinkClick("/")}
             >
               Home
@@ -225,7 +225,7 @@ const Navbar = () => {
             <div className="relative">
               <Link
                 to="/about-us"
-                className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-base font-medium flex items-center"
+                className="text-navGray hover:underline px-3 py-2 rounded-md text-base font-medium flex items-center"
                 onClick={() => handleLinkClick("/about-us")}
               >
                 About Us
@@ -253,7 +253,7 @@ const Navbar = () => {
             <div className="relative">
               <Link
                 to="/services"
-                className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-base font-medium flex items-center"
+                className="text-navGray hover:underline px-3 py-2 rounded-md text-base font-medium flex items-center"
                 onClick={() => handleLinkClick("/services")}
               >
                 Services
@@ -284,7 +284,7 @@ const Navbar = () => {
             <div className="relative">
               <Link
                 to="/sectors"
-                className="text-navGray hover:text-gray-700 px-3 py-2 rounded-md text-base font-medium flex items-center"
+                className="text-navGray hover:underline px-3 py-2 rounded-md text-base font-medium flex items-center"
                 onClick={() => handleLinkClick("/sectors")}
               >
                 Sectors
@@ -316,7 +316,7 @@ const Navbar = () => {
             </div>
             <Link
               to="/our-partners"
-              className="text-navGray hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+              className="text-navGray hover:underline block px-3 py-2 rounded-md text-base font-medium"
               onClick={() => handleLinkClick("/our-partners")}
             >
               Our Partners

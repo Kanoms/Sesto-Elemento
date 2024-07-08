@@ -6,7 +6,7 @@ import footerlogoImage from "../assets/footerlogo.png";
 
 const Footer = () => {
   return (
-    <section className="flex flex-col px-4 md:px-8 lg:px-16 py-20 bg-skyBlue gap-20">
+    <section className="flex flex-col px-4 md:px-8 lg:px-16 py-20 bg-skyBlue gap-20 font-lexend">
       <div className="flex flex-col gap-4 lg:flex-row justify-between lg:items-center">
         <div className="lg:w-[50%]" data-aos="fade-right">
           <div className="mb-4">
