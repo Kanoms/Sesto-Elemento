@@ -66,24 +66,29 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="hidden lg:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex items-center gap-4 space-x-4">
               <Link
                 to="/"
-                className="text-navGray hover:underline px-3 py-2 rounded-md text-sm font-medium"
+                className="text-navGray group transition duration-300 px-3 py-2 rounded-md text-sm font-medium"
                 onClick={() => handleLinkClick("/")}
               >
                 Home
+                <span className="lkhover"></span>
               </Link>
 
               {/* About Us Dropdown */}
               <div className="relative group">
                 <Link
                   to="/about-us"
-                  className="text-navGray hover:underline px-3 py-2 rounded-md text-sm font-medium flex items-center"
+                  className="text-navGray group transition duration-300 px-3 py-2 rounded-md text-sm font-medium "
                   onClick={() => handleLinkClick("/about-us")}
                 >
-                  About Us
-                  <IoIosArrowDown />
+                  <span className="flex items-center ">
+                    About Us
+                    <IoIosArrowDown />
+                  </span>
+
+                  <span className="lkhover"></span>
                 </Link>
                 <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md p-4 text-sm w-[273px]">
                   <Link
@@ -109,7 +114,7 @@ const Navbar = () => {
               <div className="relative group">
                 <Link
                   to="/services"
-                  className={`text-navGray hover:underline px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer ${
+                  className={`text-navGray group transition duration-300 px-3 py-2 rounded-md text-sm font-medium cursor-pointer ${
                     location.pathname.startsWith("/services") &&
                     selectedService === ""
                       ? "text-dkBlue"
@@ -117,8 +122,12 @@ const Navbar = () => {
                   }`}
                   onClick={() => handleLinkClick("/services")}
                 >
-                  Services
-                  <IoIosArrowDown />
+                  <span className="flex items-center">
+                    Services
+                    <IoIosArrowDown />
+                  </span>
+
+                  <span className="lkhover"></span>
                 </Link>
                 <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md text-sm p-4 w-[273px]">
                   {[
@@ -147,7 +156,7 @@ const Navbar = () => {
               <div className="relative group">
                 <Link
                   to="/sectors"
-                  className={`text-navGray hover:underline px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer ${
+                  className={`text-navGray group transition duration-300 px-3 py-2 rounded-md text-sm font-medium  cursor-pointer ${
                     location.pathname.startsWith("/sectors") &&
                     selectedSector === ""
                       ? "text-dkBlue"
@@ -155,8 +164,12 @@ const Navbar = () => {
                   }`}
                   onClick={() => handleLinkClick("/sectors")}
                 >
-                  Sectors
-                  <IoIosArrowDown />
+                  <span className="flex items-center">
+                    Sectors
+                    <IoIosArrowDown />
+                  </span>
+
+                  <span className="lkhover"></span>
                 </Link>
                 <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md text-sm p-4 w-[273px]">
                   {[
@@ -186,28 +199,30 @@ const Navbar = () => {
               {/* Our Partners Link */}
               <Link
                 to="/our-partners"
-                className="text-navGray hover:underline px-3 py-2 rounded-md text-sm font-medium"
+                className="text-navGray group transition duration-300 px-3 py-2 rounded-md text-sm font-medium"
                 onClick={() => handleLinkClick("/our-partners")}
               >
                 Our Partners
+                <span className="lkhover"></span>
               </Link>
             </div>
           </div>
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-navGray hover:underline focus:outline-none"
+              className="text-navGray group transition duration-300 focus:outline-none"
             >
               <IoMenu size={24} />
             </button>
           </div>
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex">
             <Link
               to="/contact-us"
-              className="text-navGray hover:text-dkBlue px-3 py-2 rounded-md text-sm font-semibold"
+              className="text-navGray group transition duration-300 px-3 py-2 rounded-md text-sm font-semibold"
               onClick={() => handleLinkClick("/contact-us")}
             >
               Contact Us
+              <span className="lkhover"></span>
             </Link>
           </div>
         </div>
@@ -217,7 +232,7 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               to="/"
-              className="text-navGray hover:underline block px-3 py-2 rounded-md text-base font-medium"
+              className="text-navGray group transition duration-300 block px-3 py-2 rounded-md text-base font-medium"
               onClick={() => handleLinkClick("/")}
             >
               Home
@@ -225,7 +240,7 @@ const Navbar = () => {
             <div className="relative">
               <Link
                 to="/about-us"
-                className="text-navGray hover:underline px-3 py-2 rounded-md text-base font-medium flex items-center"
+                className="text-navGray group transition duration-300 px-3 py-2 rounded-md text-base font-medium flex items-center"
                 onClick={() => handleLinkClick("/about-us")}
               >
                 About Us
@@ -253,7 +268,7 @@ const Navbar = () => {
             <div className="relative">
               <Link
                 to="/services"
-                className="text-navGray hover:underline px-3 py-2 rounded-md text-base font-medium flex items-center"
+                className="text-navGray group transition duration-300 px-3 py-2 rounded-md text-base font-medium flex items-center"
                 onClick={() => handleLinkClick("/services")}
               >
                 Services
@@ -284,7 +299,7 @@ const Navbar = () => {
             <div className="relative">
               <Link
                 to="/sectors"
-                className="text-navGray hover:underline px-3 py-2 rounded-md text-base font-medium flex items-center"
+                className="text-navGray group transition duration-300 px-3 py-2 rounded-md text-base font-medium flex items-center"
                 onClick={() => handleLinkClick("/sectors")}
               >
                 Sectors
@@ -316,10 +331,19 @@ const Navbar = () => {
             </div>
             <Link
               to="/our-partners"
-              className="text-navGray hover:underline block px-3 py-2 rounded-md text-base font-medium"
+              className="text-navGray group transition duration-300 block px-3 py-2 rounded-md text-base font-medium"
               onClick={() => handleLinkClick("/our-partners")}
             >
               Our Partners
+            </Link>
+
+            <Link
+              to="/contact-us"
+              className="text-navGray group transition duration-300 block px-3 py-2 rounded-md text-base font-medium"
+              onClick={() => handleLinkClick("/contact-us")}
+            >
+              Contact Us
+              <span className="lkhover"></span>
             </Link>
           </div>
         </div>
