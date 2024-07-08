@@ -11,8 +11,12 @@ const Footer = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { setSelectedService, setSelectedSector } =
-    useContext(NavigationContext);
+  const {
+    setSelectedService,
+    setSelectedSector,
+    selectedSector,
+    selectedService,
+  } = useContext(NavigationContext);
 
   useEffect(() => {
     if (location.pathname.startsWith("/services")) {
@@ -110,68 +114,24 @@ const Footer = () => {
                 <span className="lkhover"></span>
               </Link>
             </li>
-            <li className="ftlist">
-              <Link
-                to="/services#procurement"
-                className="text-navGray group transition duration-300"
-                onClick={() => handleServiceFooter("/services#procurement")}
+            {[
+              { label: "Procurement", key: "procurement" },
+              { label: "Contracting", key: "contracting" },
+              { label: "Marine", key: "marine" },
+              { label: "Man Power Supply", key: "manPowerSupply" },
+              { label: "Technical Site Asst", key: "technicalSiteAsst" },
+              { label: "Equipment Lease", key: "equipmentLease" },
+            ].map((service) => (
+              <li
+                key={service.key}
+                onClick={() => handleServiceFooter(service.key)}
+                className={`ftlist text-navGray cursor-pointer ${
+                  selectedService === service.key ? "text-dkBlue" : ""
+                }`}
               >
-                Procurement
-                <span className="lkhover"></span>
-              </Link>
-            </li>
-            <li className="ftlist">
-              <Link
-                to="/services#contracting"
-                className="text-navGray group transition duration-300"
-                onClick={() => handleServiceFooter("/services#contracting")}
-              >
-                Contracting
-                <span className="lkhover"></span>
-              </Link>
-            </li>
-            <li className="ftlist">
-              <Link
-                to="/services#marine"
-                className="text-navGray group transition duration-300"
-                onClick={() => handleServiceFooter("/services#marine")}
-              >
-                Marine
-                <span className="lkhover"></span>
-              </Link>
-            </li>
-            <li className="ftlist">
-              <Link
-                to="/services#manPowerSupply"
-                className="text-navGray group transition duration-300"
-                onClick={() => handleServiceFooter("/services#manPowerSupply")}
-              >
-                Man power Supply
-                <span className="lkhover"></span>
-              </Link>
-            </li>
-            <li className="ftlist">
-              <Link
-                to="/services#technicalSiteAsst"
-                className="text-navGray group transition duration-300"
-                onClick={() =>
-                  handleServiceFooter("/services#technicalSiteAsst")
-                }
-              >
-                Technical Site Asst
-                <span className="lkhover"></span>
-              </Link>
-            </li>
-            <li className="ftlist">
-              <Link
-                to="/services#equipmentLease"
-                className="text-navGray group transition duration-300"
-                onClick={() => handleServiceFooter("/services#equipmentLease")}
-              >
-                Equipment Lease
-                <span className="lkhover"></span>
-              </Link>
-            </li>
+                {service.label}
+              </li>
+            ))}
           </ul>
           <ul>
             <li className="ftlinkhd">
@@ -180,62 +140,30 @@ const Footer = () => {
                 className="text-navGray group transition duration-300"
                 onClick={() => handleLinkClick("/sectors")}
               >
-                Our Sector
+                Our Sectors
                 <span className="lkhover"></span>
               </Link>
             </li>
-            <li className="ftlist">
-              <Link
-                to="/sectors#oilngas"
-                className="text-navGray group transition duration-300"
-                onClick={() => handleSectorFooter("/sectors#oilngas")}
+            {[
+              { label: "Oil and Gas", key: "oilngas" },
+              {
+                label: "Construction and Engineering",
+                key: "constructionnengineering",
+              },
+              { label: "Defence", key: "defence" },
+              { label: "Infrastructure", key: "infrastructure" },
+              { label: "Renewable", key: "renewable" },
+            ].map((sector) => (
+              <li
+                key={sector.key}
+                onClick={() => handleSectorFooter(sector.key)}
+                className={`ftlist text-navGray cursor-pointer ${
+                  selectedSector === sector.key ? "text-dkBlue" : ""
+                }`}
               >
-                Oil and Gas
-                <span className="lkhover"></span>
-              </Link>
-            </li>
-            <li className="ftlist">
-              <Link
-                to="/sectors#constructionnengineering"
-                className="text-navGray group transition duration-300"
-                onClick={() =>
-                  handleSectorFooter("/sectors#constructionnengineering")
-                }
-              >
-                Construction and Engineering
-                <span className="lkhover"></span>
-              </Link>
-            </li>
-            <li className="ftlist">
-              <Link
-                to="/sectors#defence"
-                className="text-navGray group transition duration-300"
-                onClick={() => handleSectorFooter("/sectors#defence")}
-              >
-                Defence
-                <span className="lkhover"></span>
-              </Link>
-            </li>
-            <li className="ftlist">
-              <Link
-                to="/sectors#infrastructure"
-                className="text-navGray group transition duration-300"
-                onClick={() => handleSectorFooter("/sectors#infrastructure")}
-              >
-                Infrastructure
-                <span className="lkhover"></span>
-              </Link>
-            </li>
-            <li className="ftlist">
-              <Link
-                to="/sectors#renewable"
-                className="text-navGray group transition duration-300"
-                onClick={() => handleSectorFooter("/sectors#renewable")}
-              >
-                Renewable
-                <span className="lkhover"></span>
-              </Link>
-            </li>
+                {sector.label}
+              </li>
+            ))}
           </ul>
           <ul>
             <li className="ftlinkhd">
