@@ -1,6 +1,6 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useContext, useEffect } from "react";
-import { NavigationContext } from "../context/NavigationContext";
+// import { Link, useNavigate, useLocation } from "react-router-dom";
+// import { useContext, useEffect } from "react";
+// import { NavigationContext } from "../context/NavigationContext";
 import { FiInstagram } from "react-icons/fi";
 import { RiFacebookBoxLine } from "react-icons/ri";
 import { LiaTwitterSquare } from "react-icons/lia";
@@ -8,39 +8,39 @@ import { CiLinkedin } from "react-icons/ci";
 import footerlogoImage from "../assets/footerlogo.png";
 
 const Footer = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  // const navigate = useNavigate();
+  // const location = useLocation();
 
-  const { setSelectedService, setSelectedSector } =
-    useContext(NavigationContext);
+  // const { setSelectedService, setSelectedSector } =
+  //   useContext(NavigationContext);
 
-  useEffect(() => {
-    if (location.pathname.startsWith("/services")) {
-      setSelectedService(location.hash.substring(1));
-    }
-    if (location.pathname.startsWith("/sectors")) {
-      setSelectedSector(location.hash.substring(1));
-    }
-  }, [location, setSelectedService, setSelectedSector]);
+  // useEffect(() => {
+  //   if (location.pathname.startsWith("/services")) {
+  //     setSelectedService(location.hash.substring(1));
+  //   }
+  //   if (location.pathname.startsWith("/sectors")) {
+  //     setSelectedSector(location.hash.substring(1));
+  //   }
+  // }, [location, setSelectedService, setSelectedSector]);
 
-  const handleServiceFooter = (service) => {
-    setSelectedService(service);
-    navigate(`/services#${service}`);
-  };
+  // const handleServiceFooter = (service) => {
+  //   setSelectedService(service);
+  //   navigate(`/services#${service}`);
+  // };
 
-  const handleSectorFooter = (sector) => {
-    setSelectedSector(sector);
-    navigate(`/sectors#${sector}`);
-  };
+  // const handleSectorFooter = (sector) => {
+  //   setSelectedSector(sector);
+  //   navigate(`/sectors#${sector}`);
+  // };
 
-  const handleAboutusFooter = (path) => {
-    navigate(path);
-  };
+  // const handleAboutusFooter = (path) => {
+  //   navigate(path);
+  // };
 
-  const handleLinkClick = (path) => {
-    navigate(path);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  // const handleLinkClick = (path) => {
+  //   navigate(path);
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // };
 
   return (
     <section className="flex flex-col px-4 md:px-8 lg:px-16 py-20 bg-skyBlue gap-20 font-lexend">
@@ -59,99 +59,117 @@ const Footer = () => {
         <div className="hidden md:flex items-start w-full justify-between lg:gap-2 xl:gap-16">
           <ul>
             <li className="ftlinkhd">
-              <Link
+              {/* <Link
                 to="/"
                 className="text-navGray group transition duration-300 "
                 onClick={() => handleLinkClick("/")}
               >
                 Company
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Company
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/about-us"
                 className="text-navGray group transition duration-300 "
                 onClick={() => handleLinkClick("/about-us")}
               >
                 About us
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              About us
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/our-partners"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleLinkClick("/our-partners")}
               >
                 Our Partners
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Our Partners
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/about-us#whoweare"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleAboutusFooter("/about-us#whoweare")}
               >
                 Faq
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Faq
+              <span className="lkhover"></span>
             </li>
           </ul>
           <ul>
             <li className="ftlinkhd">
-              <Link
+              {/* <Link
                 to="/services"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleLinkClick("/services")}
               >
                 Our Service
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Our Service
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/services#procurement"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleServiceFooter("/services#procurement")}
               >
                 Procurement
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Procurement
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/services#contracting"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleServiceFooter("/services#contracting")}
               >
                 Contracting
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Contracting
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/services#marine"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleServiceFooter("/services#marine")}
               >
                 Marine
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Marine
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/services#manPowerSupply"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleServiceFooter("/services#manPowerSupply")}
               >
                 Man power Supply
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Man power Supply
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/services#technicalSiteAsst"
                 className="text-navGray group transition duration-300"
                 onClick={() =>
@@ -160,42 +178,50 @@ const Footer = () => {
               >
                 Technical Site Asst
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Technical Site Asst
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/services#equipmentLease"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleServiceFooter("/services#equipmentLease")}
               >
                 Equipment Lease
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Equipment Lease
+              <span className="lkhover"></span>
             </li>
           </ul>
           <ul>
             <li className="ftlinkhd">
-              <Link
+              {/* <Link
                 to="/sectors"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleLinkClick("/sectors")}
               >
                 Our Sector
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Our Sector
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/sectors#oilngas"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleSectorFooter("/sectors#oilngas")}
               >
                 Oil and Gas
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Oil and Gas
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/sectors#constructionnengineering"
                 className="text-navGray group transition duration-300"
                 onClick={() =>
@@ -204,69 +230,83 @@ const Footer = () => {
               >
                 Construction and Engineering
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Construction and Engineering
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/sectors#defence"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleSectorFooter("/sectors#defence")}
               >
                 Defence
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Defence
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/sectors#infrastructure"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleSectorFooter("/sectors#infrastructure")}
               >
                 Infrastructure
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Infrastructure
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/sectors#renewable"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleSectorFooter("/sectors#renewable")}
               >
                 Renewable
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Renewable
+              <span className="lkhover"></span>
             </li>
           </ul>
           <ul>
             <li className="ftlinkhd">
-              <Link
+              {/* <Link
                 to="/contact-us"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleLinkClick("/contact-us")}
               >
                 Contact Us
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Contact Us
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/contact-us"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleLinkClick("/contact-us")}
               >
                 Customer Support
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Customer Support
+              <span className="lkhover"></span>
             </li>
             <li className="ftlist">
-              <Link
+              {/* <Link
                 to="/contact-us"
                 className="text-navGray group transition duration-300"
                 onClick={() => handleLinkClick("/contact-us")}
               >
                 Help
                 <span className="lkhover"></span>
-              </Link>
+              </Link> */}
+              Help
+              <span className="lkhover"></span>
             </li>
           </ul>
         </div>
