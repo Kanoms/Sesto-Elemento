@@ -93,7 +93,7 @@ const Navbar = () => {
                 <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md p-4 text-sm w-[273px]">
                   <Link
                     to="/about-us#whoweare"
-                    className="flex items-center gap-1 px-4 py-2 text-navGray"
+                    className="flex items-center gap-1 px-4 py-2 text-navGray hover:underline"
                     onClick={() => handleAboutusNav("/about-us#whoweare")}
                   >
                     <GoDotFill />
@@ -101,7 +101,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     to="/about-us#whoweare"
-                    className="flex items-center gap-1 px-4 py-2 text-navGray"
+                    className="flex items-center gap-1 px-4 py-2 text-navGray hover:underline"
                     onClick={() => handleAboutusNav("/about-us#whoweare")}
                   >
                     <GoDotFill />
@@ -141,7 +141,7 @@ const Navbar = () => {
                     <div
                       key={service.key}
                       onClick={() => handleServiceNav(service.key)}
-                      className={`flex items-center gap-1 px-4 py-2 text-navGray cursor-pointer ${
+                      className={`flex items-center gap-1 px-4 py-2 text-navGray cursor-pointer hover:underline ${
                         selectedService === service.key ? "text-dkBlue" : ""
                       }`}
                     >
@@ -185,7 +185,7 @@ const Navbar = () => {
                     <div
                       key={sector.key}
                       onClick={() => handleSectorNav(sector.key)}
-                      className={`flex items-center gap-1 px-4 py-2 text-navGray cursor-pointer ${
+                      className={`flex items-center gap-1 px-4 py-2 text-navGray cursor-pointer hover:underline ${
                         selectedSector === sector.key ? "text-dkBlue" : ""
                       }`}
                     >
