@@ -8,7 +8,7 @@ const ServicesHomePage = () => {
         className="lg:w-[50%] lg:ml-16 flex flex-col gap-4 p-4 sm:p-8"
         data-aos="fade-right"
       >
-        <h2 className="text-4xl md:text-[48px] font-semibold text-dkBlue capitalize">
+        <h2 className="text-4xl md:text-5xl font-semibold text-dkBlue capitalize">
           <span className="text-ltBlue">Maximizing</span> operational efficiency
           for <span className="text-ltBlue">sustainable growth</span>{" "}
         </h2>
